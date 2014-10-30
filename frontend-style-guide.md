@@ -227,7 +227,7 @@ TODO
    此为前端开发团队遵循和约定的代码书写规范，意在提高代码的规范性和可维护性。
    
 ### 总规范
-   1. 忽略（Omit）协议：如 background: url(http://www.google.com/images/example); 应该写background: url(//www.google.com/images/example);以方便http与https协议切换，除非必须使用某个协议
+   1. 忽略（Omit）协议：如 `background: url(http://www.google.com/images/example);` 应该写`background: url(//www.google.com/images/example);`以方便http与https协议切换，除非必须使用某个协议
    2. 缩进使用两个空格，不要使用tab
    3. 标签属性使用小写
    4. 尾部不要留有空格，以防diff
@@ -240,8 +240,8 @@ TODO
 ##### 语法
   1. 在属性上，使用双引号，不要使用单引号。
   2. 不要在自动闭合标签结尾处使用斜线 -(HTML5 规范)指出他们是可选的。
-  3. 不要忽略可选的关闭标签（例如，</li> 和</body>）
-  4. 使用html5的规范<!DOCTYPE html>
+  3. 不要忽略可选的关闭标签（例如，`</li>` 和`</body>`）
+  4. 使用html5的规范`<!DOCTYPE html>`
   5. Language attribute - Sitepoint只是给出了语言代码的大类，比如说中文就只给出了ZH，但是没有区分香港，台湾，大陆等。
      
         <html lang="en-us"> <!-- ... --> </html>
@@ -252,7 +252,7 @@ TODO
          
           <head> <meta charset="UTF-8"> </head>
   8. 多媒体标签向后兼容，记得加上alt属性
-  9. 由于utf-8编码的使用，某些记号无需转码，如 & mdash;, & rdquo;, or & #x263a;当然<或是&除外
+  9. 由于utf-8编码的使用，某些记号无需转码，如 `& mdash;, & rdquo;, or & #x263a;`当然`<`或是`&`除外
  
 ##### html5规范
   1. 根据 HTML5 规范, 通常在引入 CSS 和 JavaScript 时不需要指明 type，因为 text/css 和 text/javascript 分别是他们的默认值。    
