@@ -92,7 +92,7 @@ TODO：
     ```
   * 按钮需要有`type`属性，提交为`type="submit"`，普通按钮为`type="button"`
 ### d) 图片
-* 小图及logo等，使用GIF/PNG-8。如果对图片边缘有要求，使用GIF
+* 小图及logo等，使用GIF/PNG-8。如果图片大于200kb请考虑使用jpg渐进式图片。
 * 其他图片使用PNG-8
 ### 其他
 * 所有的HTML文件，必须以<!DOCTYPE html>开头，slim代码：`doctype html`
