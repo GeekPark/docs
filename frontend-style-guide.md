@@ -117,6 +117,7 @@ TODO：
 * 兼容IE请使用`<meta http-equiv="X-UA-Compatible" content="IE=Edge">`
 * 引入CSS和JS无须在标签中指明type，如`text/css`
 * 将CSS置于JS文件前
+* 强制国产双核浏览器使用webkit内核渲染请使用`<meta name="renderer" content="webkit">`
 
 ## 3. CSS
 开发中，我们使用`scss`，注意是`sCss`，而不是`sAss`
@@ -189,6 +190,9 @@ TODO：
   * **BAD** `margin: 0px;`
   * **GOOD** `margin: 0;`
 * 使用`//`来注释代码，而非`/**/`
+* 遵循最小影响原则
+  * **BAD** `margin: 0 auto;`
+  * **GOOD** `margin-left: auto;``margin-right: auto;`
 
 ### c) 属性
 * 减少`dispaly:inline-block`、`float`、`position`的使用
@@ -313,6 +317,8 @@ TODO：
 
 ## 0. 响应式
 * `font-size`使用rem而非px或em
+* 移动版禁止缩放等使用以下代码（根据实际情况修改）
+`<meta content="initial-scale=1.0,maximum-scale=1.0,width=device-width" name="viewport" />`
 
 
 ## Why do you waste a lot of time wondering why?
