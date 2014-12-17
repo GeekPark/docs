@@ -120,6 +120,7 @@ TODO：
 * 兼容IE请使用`<meta http-equiv="X-UA-Compatible" content="IE=Edge">`
 * 引入CSS和JS无须在标签中指明type，如`text/css`
 * 将CSS置于JS文件前
+* 强制国产双核浏览器使用webkit内核渲染请使用`<meta name="renderer" content="webkit">`
 
 ## 3. CSS
 开发中，我们使用`scss`，注意是`sCss`，而不是`sAss`
@@ -143,6 +144,7 @@ TODO：
   @import "with_mixin";
   ```
 * media查询属性放置于单独文件
+
 ### b) 编码风格
 #### 选择器
 * 不进行引起歧义和不必要的缩写
@@ -191,12 +193,22 @@ TODO：
   * **BAD** `margin: 0px;`
   * **GOOD** `margin: 0;`
 * 使用`//`来注释代码，而非`/**/`
+* 遵循最小影响原则
+  * **BAD** `margin: 0 auto;`
+  * **GOOD** `margin-left: auto;``margin-right: auto;`
 
 ### c) 属性
 * 减少`dispaly:inline-block`、`float`、`position`的使用
 * 尽量采用简写模式，如：
-  * **NOT GOOD** `background-image: url(//example.com)`
-  * **GOOD** `background: url(//example.com)`
+  * **NOT GOOD** 
+  
+  ```
+  background-image: url(//example.com);
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  ```
+  * **GOOD** `background: #ffffff url(//example.com) center center no-repeat`
 * `background`，忽略协议，`url`中不使用引号
   * **NOT GOOD** `background: url(http://example.com)`
   * **NOT GOOD 2** `background: url("//example.com")`
@@ -233,6 +245,22 @@ TODO：
   ```
 * 变量赋值放在函数头部，所有的函数在使用前定义
 * 创建一个类，将全部的全局变量存在其中，参考`geekpark.js`
+* 每个变量声明占一行，使用悬挂式缩进
+  * **BAD** 
+   
+    ```
+    var foo,bar,
+        test = 10;
+    ```
+    
+  * **GOOD**
+    
+    ```
+    var foo,
+        bar,
+        test = 10;
+    ```
+
 ### 风格
 * 优先选择单引号，如果需要包含单引号，则使用双引号
 * 函数调用时，函数名和`(`之间无需空格：`foo(bar)`；
@@ -258,6 +286,19 @@ TODO：
   ```
   var template = ['<ul>', '<li>, </li>', '</ul>'].join('');
   ```
+  
+* jQuery属性选择器中若嵌套变量无须加单引号，除非变量中包含单/双引号
+  * 一般写法：
+
+  ```
+  $('.class a[data-target='+ somevar +']');
+  ```
+  * 变量内含引号：
+
+  ```
+  $(".class a[data-target='"+ somevar +"']");
+  ```
+
 ### 不能
 * 不使用构造函数
   * **BAD** `var foo = new Array;`
@@ -278,7 +319,9 @@ TODO：
   ```
 
 ## 0. 响应式
-TODO
+* `font-size`使用rem而非px或em
+* 移动版禁止缩放等使用以下代码（根据实际情况修改）
+`<meta content="initial-scale=1.0,maximum-scale=1.0,width=device-width" name="viewport" />`
 
 
 ## Why do you waste a lot of time wondering why?
